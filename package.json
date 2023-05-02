@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"smelte": "^1.1.8",
 		"svelte-kit": "^1.2.0"
 	}
 }

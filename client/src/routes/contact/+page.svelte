@@ -2,30 +2,58 @@
 	<title>Contact</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
-
+<script>
+	import {
+    Form,
+    FormGroup,
+    Checkbox,
+    RadioButtonGroup,
+    RadioButton,
+    Select,
+    SelectItem,
+    Button,
+	TextInput,
+	TextArea,
+	Row,
+	Column,
+	Grid,
+  } from "carbon-components-svelte";
+</script>
 <div class="text-column">
-	<form method="POST">
-		<label>
-			Full name
-			<input name="name", type="text">
-		</label>
-		<label>
-			Email
-			<input name="email", type="email">
-		</label>
-		<label>
-			Organization
-			<input name="organization", type="text">
-		</label>
-		<label>
-			Subject
-			<input name="subject", type="text">
-		</label>
-		<label>
-			Body
-			<input name="body", type="text">
-		</label>
-		<div class="frc-captcha" data-sitekey="FCMKAQ43JP6LTSFR"></div>
-		<button>Submit</button>
-	</form>
+	<Form method="POST">
+		<FormGroup>
+			<Grid>
+				<Row>
+					<Column>
+						<TextInput labelText="Full Name" name="name" type="text"/>
+					</Column>
+					<Column>
+						<TextInput labelText="Email" name="email" type="email"/>
+					</Column>
+					<Column>
+						<TextInput labelText="Organization" name="organization" type="text"/>
+					</Column>
+				</Row>
+
+				<Row>
+					<Column>
+						<TextInput labelText="Subject" name="subject" type="text"/>
+					</Column>
+				</Row>
+				<Row>
+					<Column>
+						<TextArea labelText="Body" name="body" type="text"/>
+					</Column>
+				</Row>
+				<Row>
+					<Column>
+						<Button type="submit">Submit</Button> 
+					</Column>
+					<Column>
+						<div class="frc-captcha" data-sitekey="FCMKAQ43JP6LTSFR"></div>
+					</Column>
+				</Row>
+			</Grid>
+		</FormGroup>
+	</Form>
 </div>

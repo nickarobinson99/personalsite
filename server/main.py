@@ -54,13 +54,12 @@ def handle_captcha_response(captcha_response):
         return True
     
 async def send_mail(email: Email):
-    html="""<p>Test</p>"""
     fm = FastMail(mail_config)
     message = MessageSchema(
-        subject=email.subject,
+        subject=f'{email.subject} - {email.name}',
         recipients=[os.environ.get('EMAIL_RECIPIENT')],
-        body=html,
-        subtype=MessageType.html
+        body=f'{email.body}\nfrom: {email.email}\norganization: {email.organization}',
+        subtype=MessageType.plain
     )
     response = await fm.send_message(message)
     return response

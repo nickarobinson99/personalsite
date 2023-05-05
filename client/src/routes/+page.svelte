@@ -1,4 +1,19 @@
 <script>
+	import LogoLinkedin from "carbon-icons-svelte/lib/LogoLinkedin.svelte";
+	import LogoGithub from "carbon-icons-svelte/lib/LogoGithub.svelte";
+	import Email from "carbon-icons-svelte/lib/Email.svelte";
+
+	let hoverIconColor = 'grey';
+	let defaultIconColor = 'white';
+	function handleIconMouseOver(e) {
+		let element = e.target;
+		element.setAttribute("fill", hoverIconColor)
+	}
+
+	function handleIconMouseOut(e) {
+		let element = e.target;
+		element.setAttribute("fill", defaultIconColor)
+	}
 </script>
 
 <svelte:head>
@@ -12,8 +27,23 @@
 	</h1>
 	<div role="doc-subtitle">
 		Software Engineer
-		
+		<div class='social-icons'>
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+			<a on:mouseover={handleIconMouseOver} on:mouseout={handleIconMouseOut} href="https://www.linkedin.com/in/nick-robinson-37412b35/">
+				<LogoLinkedin fill={defaultIconColor} size={24}/>
+			</a>
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+			<a on:mouseover={handleIconMouseOver} on:mouseout={handleIconMouseOut} href="https://github.com/nickarobinson99/personalsite">
+				<LogoGithub fill={defaultIconColor} size={24}/>
+			</a>
+			<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+			<a on:mouseover={handleIconMouseOver} on:mouseout={handleIconMouseOut} href="mailto:nick@nickrobinson.site">
+				<Email fill={defaultIconColor} size={24}/>
+			</a>
+			
+		</div>
 	</div>
+
 
 </section>
 
@@ -31,5 +61,9 @@
 	}
 	[role="doc-subtitle"] {
 		width: 100%;
+	}
+	.social-icons {
+		width: 100%;
+		margin-top: 0.2rem;
 	}
 </style>

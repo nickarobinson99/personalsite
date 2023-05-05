@@ -1,14 +1,14 @@
 <script>
 	import Header from './Header.svelte';
-	import "carbon-components-svelte/css/g80.css";
+	import Nav from './Nav.svelte';
+	import "carbon-components-svelte/css/g90.css";
 	import UnderConstruction from './UnderConstruction.svelte';
 	const env = import.meta.env.MODE;
 </script>
 
 <div class="app">
 	{#if env=='development'}
-	<Header />
-	
+	<Nav/>
 	<main>
 		<slot />
 	</main>

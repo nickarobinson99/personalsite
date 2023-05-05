@@ -17,9 +17,13 @@
 	Row,
 	Column,
 	Grid,
+	Content,
   } from "carbon-components-svelte";
 </script>
 <div class="text-column">
+	<Content>
+	<h1>Contact Me</h1>
+	<div role="doc-subtitle">You can also email me at nick@nickrobinson.site (it all goes to the same place) </div>
 	<Form method="POST">
 		<FormGroup>
 			<Grid>
@@ -56,4 +60,5 @@
 			</Grid>
 		</FormGroup>
 	</Form>
+</Content>
 </div>
